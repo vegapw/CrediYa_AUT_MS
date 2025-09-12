@@ -1,5 +1,6 @@
 package co.com.pragma.api.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 import lombok.NonNull;
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 @Builder
 public record CreateUserDTO(
 
+        @JsonIgnore
         BigInteger idNumber,
         Byte idType,
         @NotBlank(message = "Firstname is required")
